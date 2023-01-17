@@ -1,10 +1,10 @@
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
+import 'package:bookly_app/core/errors/failures.dart';
 import 'package:dartz/dartz.dart';
 
 import 'package:dio/dio.dart';
 
-import '../../../../core/errors/failures.dart';
 import '../../../../core/utils/api_service.dart';
-import '../models/book_model/book_model.dart';
 import 'home_repo.dart';
 
 class HomeRepoImpl implements HomeRepo {
@@ -12,7 +12,7 @@ class HomeRepoImpl implements HomeRepo {
 
   HomeRepoImpl(this.apiService);
   @override
-  Future<Either<Failure, List<BookModel>>> fetchNewsetBooks() async {
+  Future<Either<Failure, List<BookModel>>> fetchNewSetBooks() async {
     try {
       var data = await apiService.get(
           endPoint:
@@ -91,11 +91,5 @@ class HomeRepoImpl implements HomeRepo {
         ),
       );
     }
-  }
-
-  @override
-  Future<Either<Failure, List<BookModel>>> fetchNewSetBooks() {
-    // TODO: implement fetchNewSetBooks
-    throw UnimplementedError();
   }
 }
