@@ -1,10 +1,10 @@
-import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
-import 'package:bookly_app/core/errors/failures.dart';
 import 'package:dartz/dartz.dart';
 
 import 'package:dio/dio.dart';
 
+import '../../../../core/errors/failures.dart';
 import '../../../../core/utils/api_service.dart';
+import '../models/book_model/book_model.dart';
 import 'home_repo.dart';
 
 class HomeRepoImpl implements HomeRepo {
@@ -22,7 +22,7 @@ class HomeRepoImpl implements HomeRepo {
         try {
           books.add(BookModel.fromJson(item));
         } catch (e) {
-          books.add(BookModel.fromJson(item));
+          // books.add(BookModel.fromJson(item));
         }
       }
 
